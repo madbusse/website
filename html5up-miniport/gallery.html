@@ -47,12 +47,15 @@
 <!-- Gallery Section -->
 <section class="gallery-section">
   
-  <!-- Flip Card 1 -->
+
+
+  <!-- August 25 photos -->
   <div class="flip-card">
+    <h3 style="text-align: left;">August 2025</h3>
     <div class="flip-card-inner">
       <!-- FRONT (Image) -->
       <div class="flip-card-front">
-        <img src="images/mountain.jpg" alt="Gallery Image">
+        <img src="images/la.jpg" alt="Gallery Image">
       </div>
 
       <!-- BACK (Text) -->
@@ -68,12 +71,13 @@
     </div>
   </div>
 
-  <!-- Flip Card 2 -->
+  <!-- July 25 photos -->
   <div class="flip-card">
+    <h3 style="text-align: left;">July 2025</h3>
     <div class="flip-card-inner">
       <!-- FRONT (Image) -->
       <div class="flip-card-front">
-        <img src="images/mountain.jpg" alt="Gallery Image">
+        <img src="images/fortworth.jpg" alt="Gallery Image">
       </div>
 
       <!-- BACK (Text) -->
@@ -89,12 +93,13 @@
     </div>
   </div>
 
-  <!-- Flip Card 3 -->
+  <!-- june 25 photos -->
   <div class="flip-card">
+    <h3 style="text-align: left;">June 2025</h3>
     <div class="flip-card-inner">
       <!-- FRONT (Image) -->
       <div class="flip-card-front">
-        <img src="images/mountain.jpg" alt="Gallery Image">
+        <img src="images/dawn.jpg" alt="Gallery Image">
       </div>
 
       <!-- BACK (Text) -->
@@ -112,13 +117,48 @@
 
 </section>
 
+<!-- Contact/Footer -->
+  <article id="contact" class="wrapper style4">
+      <div class="container medium">
+      <header>
+          <h2>Thanks for visiting!</h2>
+          <p>Feel free to reach out.</p>
+      </header>
+      <ul class="contact-links">
+          <li>
+          <a href="mailto:madbusse@gmail.com" class="icon solid fa-envelope">
+              <span class="label">Email</span> madbusse@gmail.com
+          </a>
+          </li>
+          <li>
+          <a href="https://www.linkedin.com/in/madbusse" class="icon brands fa-linkedin-in" target="_blank">
+              <span class="label">LinkedIn</span> linkedin.com/in/madbusse
+          </a>
+          </li>
+          <li>
+          <a href="https://github.com/madbusse" class="icon brands fa-github" target="_blank">
+              <span class="label">GitHub</span> github.com/madbusse
+          </a>
+          </li>
+      </ul>
+      <footer style="margin-top: 5rem;">
+          <ul id="copyright">
+              <li>&copy; 2025 Madeline Busse. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+      </footer>
+      </div>
+  </article>  
+
 </body>
 
 <!-- JS for flip card :D -->
 <script>
-  const card = document.querySelector('.flip-card');
-  card.addEventListener('click', () => {
-    card.classList.toggle('flipped');
+  const flipCards = document.querySelectorAll('.flip-card');
+  flipCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
   });
 </script>
 

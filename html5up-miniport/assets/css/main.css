@@ -1651,7 +1651,7 @@ input, select, textarea {
 	padding: 4rem; /* space around the edges */
 	display: flex;
 	flex-direction: column;
-	gap: 5rem;
+	gap: 4rem;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
@@ -1682,6 +1682,7 @@ input, select, textarea {
 	aspect-ratio: 16 / 9; /* optional for consistent sizing */
 	perspective: 1200px;
 	position: relative;
+	padding: 1rem;
 	}
 
 	/* Flip mechanism */

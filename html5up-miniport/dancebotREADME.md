@@ -1,3 +1,15 @@
+## Demo & Music Video
+
+### Demo
+Example of Dancebot's functionality: 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/p9QbDhW3kTY/0.jpg)](https://www.youtube.com/watch?v=p9QbDhW3kTY)
+
+### Music Video
+Inspired by Dylan Glas, we created a music video featuring Dancebot. Special shoutout and many thanks to Danny (Turtlebot Nanny) for his constant help debugging the TBs! 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dN4DkEUt5Js/0.jpg)](https://www.youtube.com/watch?v=dN4DkEUt5Js)
+
 ## Project Description
 ### Goals, Interesting Features, Execution  
 Our project, **Dancebot**, is meant to allow users to interact with turtlebots via computer vision to instruct the turtlebots to complete a sequential dance routine. The project is interesting because of how it is centered around a Human Robot Interaction between a person and the turtlebot; the order and number of dance moves are entirely determined by the user, and the turtlebot is capable of executing them in sequence. The project also involves the creation of a trained computer vision model which allows a turtlebot to be able to recognize and process human hand gestures – the model we trained is capable of significantly expanding functionality beyond the scope of our project due to its large scale, and our image preprocessing scripts can be used to add more data (for example, with varying backgrounds) if needed. At the end of our project, we were able to program 5 specific dance moves (The Wave, The Chop, The Spin, The Point, and The Whip/Nae Nae) and a computer vision model capable of recognizing the 24 static signs of American Sign Language according to the Sign Language MNIST dataset. We then were able to choose 5 specific signs to correspond with our five dance moves, and we were able to use the turtlebot camera to have the robot to be able to witness a sequence of signs and execute the corresponding dance moves. This shows the integration of the model and dances: the prediction from the model determines the identity of the dance move.  
@@ -67,15 +79,3 @@ We were not able to reach our stretch goal for this project, which was to implem
 ### Takeaways
 One takewaway from this project is that the turtlebot's camera is actually not terrible at training an image model. When we started the project, we initially thought we would have to use a different camera--either a depth-sensing one or our webcams--in order to get images that would be clear enough to train a computer vision model. However, given that the model we modified consisted of images that were highly pixelated (28 by 28), the grainy quality of the turtlebot did not cause any disadvantages. However, we did learn that using the TB camera results in an awkward angle to display sign language gestures at. Another takeaway we had is that it is hard to achieve optimal and smooth timing using ROS. Our project integrates multiple components of the TB: camera input, cmd_vel messages, and arm movements. When working with a real-life robot, there are often lags and errors with all of these components, so writing code in a way that controls for that and allows the program to be executed regardless proved challenging. We learned that it is important how we integrate our callback and publishing functions as well as the necessity of incorporating certain sleep messages. Overall, Dancebot was a fun project, and we learned a lot!
 
-
-## Demo & Music Video
-
-### Demo
-Example of Dancebot's functionality: 
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/p9QbDhW3kTY/0.jpg)](https://www.youtube.com/watch?v=p9QbDhW3kTY)
-
-### Music Video
-Inspired by Dylan Glas, we created a music video featuring Dancebot. Special shoutout and many thanks to Danny (Turtlebot Nanny) for his constant help debugging the TBs! 
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dN4DkEUt5Js/0.jpg)](https://www.youtube.com/watch?v=dN4DkEUt5Js)

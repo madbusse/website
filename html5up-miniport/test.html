@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Madeline Busse</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Minimal GitHub-like README styling -->
+  <style>
+    :root { --fg:#24292f; --muted:#57606a; --border:#d0d7de; --bg:#fff; }
+    body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    .wrap { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .status { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .markdown-body { font-size: 16px; }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 { border-bottom: 1px solid var(--border); padding-bottom: .3em; }
+    .markdown-body pre { padding: 1rem; overflow: auto; border: 1px solid var(--border); border-radius: 6px; }
+    .markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .markdown-body table { border-collapse: collapse; }
+    .markdown-body table th, .markdown-body table td { border:1px solid var(--border); padding:.5rem .75rem; }
+    .markdown-body blockquote { margin: 0; padding-left: 1rem; border-left: 4px solid var(--border); color: var(--muted); }
+    .markdown-body img { max-width: 100%; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  </style>
+
+  <!-- marked: Markdown -> HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- DOMPurify: sanitize HTML (XSS protection) -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+  <!-- highlight.js: code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+  <!-- (Optional) common languages -->
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/typescript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/bash.min.js"></script>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="container">
+            <li><a href="index.html#top">Home</a></li>
+            <li><a href="index.html#resume">Resume</a></li>
+            <li><a href="index.html#projects">More Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="treasure.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <article id="top" class="hero-section" style="background-image: url('images/dance.gif');">
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 col-5-large col-12-medium">
+                        <span class="image fit"><img src="images/dancebot.gif" alt="DanceBot" /></span>
+                    </div>
+                    <div class="col-8 col-7-large col-12-medium">
+                        <header>
+                            <h1 style="color: #000000;"><b>DanceBot</b></h1>
+                        </header>
+                        <p style="color: #000000;">Text here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+  <div class="wrap">
+    <h1 class="sr-only">README</h1>
+    <div id="status" class="status">Loading README…</div>
+    <article id="readme" class="markdown-body"></article>
+  </div>
+
+  <script>
+  (async function () {
+    // ======== CONFIG ========
+    // Choose one source:
+    // 1) Local file (put README.md next to this HTML file) -> set SOURCE = "local"
+    // 2) GitHub (public) -> set SOURCE = "github" and fill in USER/REPO/BRANCH/PATH
+    const SOURCE = "local"; // "local" | "github"
+
+    // For GitHub mode only:
+    const GH = {
+      USER: "user-or-org",
+      REPO: "repo-name",
+      BRANCH: "main",
+      PATH: "dancebotREADME.md" // if in subfolder, e.g. "docs/README.md"
+    };
+
+    // ======== OPTIONS ========
+    // Marked options for better GitHub-style parsing
+    marked.setOptions({
+      gfm: true,
+      breaks: false,
+      headerIds: true,
+      mangle: false,
+      highlight: (code, lang) => {
+        try {
+          if (lang && hljs.getLanguage(lang)) {
+            return hljs.highlight(code, { language: lang }).value;
+          }
+        } catch (_) {}
+        return hljs.highlightAuto(code).value;
+      }
+    });
+
+    const statusEl = document.getElementById('status');
+    const container = document.getElementById('readme');
+
+    function ghRawUrl({USER, REPO, BRANCH, PATH}) {
+      return `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${PATH}`;
+    }
+    function ghBlobUrl({USER, REPO, BRANCH, PATH}) {
+      return `https://github.com/${USER}/${REPO}/blob/${BRANCH}/${PATH}`;
+    }
+    function ghDirBase({USER, REPO, BRANCH, PATH}) {
+      // directory of PATH inside the repo
+      const parts = PATH.split('/'); parts.pop();
+      const dir = parts.join('/');
+      return `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${dir ? dir + '/' : ''}`;
+    }
+
+    async function loadReadme() {
+      let url;
+      let fixupMode = "none";
+      if (SOURCE === "local") {
+        url = "dancebotREADME.md";
+        fixupMode = "relative-local";
+      } else {
+        url = ghRawUrl(GH);
+        fixupMode = "relative-github";
+      }
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+      return { text: await res.text(), fixupMode };
+    }
+
+    function postProcessLinksAndImages(root, mode) {
+      // Make links open new tabs
+      root.querySelectorAll('a[href]').forEach(a => {
+        a.target = '_blank'; a.rel = 'noopener noreferrer';
+        // In GitHub mode, rewrite relative links to GitHub "blob" pages
+        if (mode === "relative-github") {
+          const href = a.getAttribute('href');
+          if (href && !/^([a-z]+:)?\/\//i.test(href) && !href.startsWith('#')) {
+            const basePath = GH.PATH.split('/').slice(0, -1).join('/');
+            const joined = (basePath ? basePath + '/' : '') + href;
+            a.href = ghBlobUrl({...GH, PATH: joined});
+          }
+        }
+      });
+      // Fix relative images
+      root.querySelectorAll('img[src]').forEach(img => {
+        const src = img.getAttribute('src');
+        if (!src || /^([a-z]+:)?\/\//i.test(src) || src.startsWith('data:')) return;
+        if (mode === "relative-github") {
+          img.src = ghDirBase(GH) + src.replace(/^.\//, '');
+        }
+        // For local mode, relative paths already work if assets are next to README + HTML.
+      });
+    }
+
+    try {
+      const { text, fixupMode } = await loadReadme();
+      const html = marked.parse(text);
+      // Sanitize before injecting
+      const clean = DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+      container.innerHTML = clean;
+      postProcessLinksAndImages(container, fixupMode);
+      statusEl.textContent = "";
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = `Failed to load README: ${err.message}.`;
+      return;
+    }
+  })();
+  </script>
+</body>
+</html>

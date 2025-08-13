@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Madeline Busse</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+    <ul class="container">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#resume">Resume</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+
+<!-- Home -->
+<article id="top" class="hero-section" style="background-color: #7190B9; background-image: none; height: 60vh">
+    <div class="hero-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 col-7-large col-12-medium">
+                    <header>
+                        <h1 style="color: #000000;"><b>About Me</b></h1>
+                    </header>
+                    <p style="color: #000000;">I'm Madeline, a <b>creative</b> software engineer who is passionate about building
+                        technology that makes the world a <b>better place</b>. I double majored in <b>philosophy</b> and love to think deeply and ask
+                        questions. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- About Me Section -->
+<article id="aboutme" class="wrapper style3">
+    <section class="about-section">
+        <div class="about-row">
+            <img src="images/me1.jpg" alt="Me hiking" />
+            <p>I love hiking and exploring new landscapes. Nature keeps me grounded and inspired.</p>
+        </div>
+
+        <div class="about-row">
+            <img src="images/me2.jpg" alt="Me coding" />
+            <p>I’m a passionate developer who enjoys turning ideas into reality through clean, creative code.</p>
+        </div>
+
+        <div class="about-row">
+            <img src="images/me3.jpg" alt="Me with coffee" />
+            <p>Coffee fuels my creativity and focus — you’ll often find me working with a cup in hand.</p>
+        </div>
+    </section>  
+</article>
+
+<!-- Contact/Footer -->
+  <article id="contact" class="wrapper style4">
+      <div class="container medium">
+      <header>
+          <h2>Thanks for visiting!</h2>
+          <p>Feel free to reach out.</p>
+      </header>
+      <ul class="contact-links">
+          <li>
+          <a href="mailto:madbusse@gmail.com" class="icon solid fa-envelope">
+              <span class="label">Email</span> madbusse@gmail.com
+          </a>
+          </li>
+          <li>
+          <a href="https://www.linkedin.com/in/madbusse" class="icon brands fa-linkedin-in" target="_blank">
+              <span class="label">LinkedIn</span> linkedin.com/in/madbusse
+          </a>
+          </li>
+          <li>
+          <a href="https://github.com/madbusse" class="icon brands fa-github" target="_blank">
+              <span class="label">GitHub</span> github.com/madbusse
+          </a>
+          </li>
+      </ul>
+      <footer style="margin-top: 5rem;">
+          <ul id="copyright">
+              <li>&copy; 2025 Madeline Busse. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+      </footer>
+      </div>
+  </article>  
+
+</body>
+
+<!-- JS for flip card :D -->
+<script>
+  const flipCards = document.querySelectorAll('.flip-card');
+  flipCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
+
+</html>

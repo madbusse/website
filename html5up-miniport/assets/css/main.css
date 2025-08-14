@@ -1675,6 +1675,14 @@ input, select, textarea {
 	border-radius: 20px;
 	}
 
+	/* Mobile-friendly image display */
+	@media (max-width: 600px) {
+	.gallery-image-wrapper img {
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+	}
+
 	/* Flip Card Container */
 	.flip-card {
 	width: 100%;

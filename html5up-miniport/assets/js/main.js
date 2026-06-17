@@ -31,4 +31,7 @@
 			offset: function() { return $nav.height(); }
 		});
 
+	// Copyright year.
+		$('.copyright-year').text(new Date().getFullYear());
+
 })(jQuery);

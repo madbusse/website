@@ -1779,7 +1779,7 @@ input, select, textarea {
 
     .hero-section {
 		position: relative;
-		background-image: url('../../images/mountain0.jpg');
+		background-image: url('../../images/assets/mountain0.jpg');
 		background-size: cover;
 		background-position: center;
 		height: 100vh;
@@ -2074,6 +2074,37 @@ input, select, textarea {
 			object-fit: cover;    /* maintains aspect ratio and fills the box */
 			overflow: hidden;
 		}
+
+/* Project Detail */
+
+	.project-detail {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.project-detail > p {
+		font-size: 1.05em;
+		line-height: 1.8;
+		text-align: left;
+	}
+
+	.tech-stack {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75em;
+		margin: 1.5em 0 2.5em 0;
+	}
+
+	.tech-stack li {
+		background: #e0e0e0;
+		padding: 0.5em 1.2em;
+		border-radius: 20px;
+		font-size: 0.95em;
+		font-weight: 600;
+	}
 
 
 /* Icons */

@@ -20,68 +20,60 @@
     <nav id="nav">
     <ul class="container">
         <li><a href="index.html#top">Home</a></li>
-        <!-- <li><a href="index.html#resume">Resume</a></li> -->
         <!-- <li><a href="projects.html">Projects</a></li> -->
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="aboutme.html">About</a></li>
     </ul>
 </nav>
 
-<!-- Home -->
+<!-- Hero -->
 <article id="top" class="hero-section" style="background-color: #7190B9; background-image: none; height: 60vh">
     <div class="hero-content">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/assets/rainbow.gif" alt="" /></span>
-                </div> -->
                 <div class="col-8 col-7-large col-12-medium">
                     <header>
                         <h1 style="color: #000000;"><b>Projects</b></h1>
                     </header>
-                    <!-- <p style="color: #000000;">Explore my favorite projects from undergrad and
-                        some neat stuff I've been working on recently!
-                    </p> -->
                 </div>
             </div>
         </div>
     </div>
 </article>
 
-<!-- Robotics Projects -->
-<article id="aboutme" class="wrapper style3">
-    <section class="about-section">
+<!-- Projects Grid -->
+<article class="wrapper style3">
+    <div class="container">
         <div class="padded-container">
-            <header>
-                <h2>Robotics Projects</h2>
-                <p>I dove deep into robotics in undergrad. In addition to taking several classes
-                    across robot programming, 3D printing, and Arduino, I also spent over a year doing research in the 
-                    <a href="https://hri.cs.uchicago.edu/" target="_blank">Human Robot Interaction Lab</a> under Dr. Sarah Sebo,
-                    where I co-authored a paper that was recently published!
-                </p>
-            </header>
-            <div class="column">
-                <div class="col-4 col-6-medium col-12-small" style="margin-bottom: 2rem">
+            <div class="row">
+                <div class="col-6 col-6-medium col-12-small">
                     <article class="box style2">
-                        <a href="dancebot.html" class="image featured"><img src="images/projects/dance.gif" alt="DanceBot" style="padding: 10px;"/></a>
-                        <h3><a href="dancebot.html">DanceBot</a></h3>
-                        <p>Uniting computer vision, machine learning, and robotics to give a TurtleBot dance moves!</p>
+                        <a href="asset-generator.html" class="image featured"><img src="images/projects/nao.jpg" alt="AI Media Asset Generator" style="padding: 10px;"/></a>
+                        <h3><a href="asset-generator.html">AI Media Asset Generator</a></h3>
                     </article>
-                </div> 
-            </div>
-            <div class="column">
-                <div class="col-4 col-6-medium col-12-small" style="margin-bottom: 2rem">
+                </div>
+                <div class="col-6 col-6-medium col-12-small">
                     <article class="box style2">
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0747563225002547?via%3Dihub" target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/projects/commonenemy.jpg" alt="Study Setup" style="padding: 10px;"/></a>
-                        <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S0747563225002547?via%3Dihub" target="_blank" rel="noopener noreferrer">Robot Impact on Human-Human Closeness</a></h3>
-                        <p>Research study that analyzed interpersonal dynamics in the presence of robot facilitators.</p>
+                        <a href="stocks-monitor.html" class="image featured"><img src="images/projects/nao.jpg" alt="Serverless Stocks Monitor" style="padding: 10px;"/></a>
+                        <h3><a href="stocks-monitor.html">Serverless Stocks Monitor</a></h3>
                     </article>
-                </div> 
+                </div>
+                <div class="col-6 col-6-medium col-12-small">
+                    <article class="box style2">
+                        <a href="hri-study.html" class="image featured"><img src="images/projects/commonenemy.jpg" alt="Human-Robot Interaction Study" style="padding: 10px;"/></a>
+                        <h3><a href="hri-study.html">Human-Robot Interaction Study</a></h3>
+                    </article>
+                </div>
+                <div class="col-6 col-6-medium col-12-small">
+                    <article class="box style2">
+                        <a href="dancebot.html" class="image featured"><img src="images/projects/training.jpg" alt="DanceBot" style="padding: 10px;"/></a>
+                        <h3><a href="dancebot.html">Dancebot</a></h3>
+                    </article>
+                </div>
             </div>
         </div>
-    </section>  
+    </div>
 </article>
-
 
 <!-- Contact/Footer -->
   <article id="contact" class="wrapper style4">
@@ -114,7 +106,15 @@
           </ul>
       </footer>
       </div>
-  </article>  
+  </article>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

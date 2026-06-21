@@ -22,7 +22,8 @@ Editing `assets/css/main.css` directly is simpler if you're making targeted styl
 - `projects.html` — full project list organized by category (Robotics, AI/ML, Data Science)
 - `aboutme.html` - page with key personal insights
 - `gallery.html` - image-focused page with photos displayed in chronological order, with most recent photos at the top
-- Individual project pages: `dancebot.html`
+- Individual project pages: `asset-generator.html`, `stocks-monitor.html`, `hri-study.html`, `dancebot.html`
+- `projects.md` — source of truth for project titles, descriptions, tech stacks, images, and links
 - `busse_resume.pdf` — linked for download from the homepage
 
 ## Navigation pattern

@@ -7,6 +7,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+	--accent: #ed5f72;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -107,7 +111,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Raleway', sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		line-height: 1.85em;
 		color: #888;
 		font-weight: 300;
@@ -1862,7 +1866,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #7190B9;
+			background-color: var(--accent);
+			background-image: none;
 			color: #fff !important;
 		}
 
@@ -1871,7 +1876,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background-color: #7190B9;
+			background-color: var(--accent);
 			top: 1px;
 		}
 
@@ -2095,7 +2100,7 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Raleway', sans-serif;
+			font-family: 'Open Sans', sans-serif;
 			font-weight: 400;
 		}
 
@@ -2112,7 +2117,7 @@ input, select, textarea {
 		}
 
 		.icon.brands:before {
-			font-family: 'Raleway', sans-serif;
+			font-family: 'Open Sans', sans-serif;
 		}
 
 		.icon.featured {
@@ -2221,11 +2226,11 @@ input, select, textarea {
 
 			#nav a:hover {
 				color: #fff !important;
-				background: #7190B9;
+				background: var(--accent);
 			}
 
 			#nav a.active {
-				background: #7190B9;
+				background: var(--accent);
 			}
 
 				#nav a.active:before {
@@ -2674,6 +2679,10 @@ input, select, textarea {
 		margin: 0 auto;
 		padding: 2rem;
 		padding-top: 0;
+		}
+
+		.about-section > h2 {
+		margin-bottom: 2rem;
 		}
 
 		.about-row {

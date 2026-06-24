@@ -19,9 +19,9 @@ February 2026
 - daycation2.jpg: More shelter dogs out for a Daycation!
 March 2026
 - asheville.jpg: Spent a weekend up in the mountains of NC to support a friend running her first marathon. The elevation was tough!
-- txcabin.jpg: Another escape from the metroplex to a "lake" near Santorini (Texas, not Greece).
+- txcabin.jpg: Another escape from the metroplex to a rural Texan "lake". Unfortunately, the lakes in Texas aren't swimmable. 
 April 2026
-- dc.jpg: Visited a friend in DC and fell in love with the city!
+- dc.jpg: Visited a friend in DC and wanted to take home a special souveiner... 
 May 2026
 - mtetna.jpg: Atop Mt. Etna. It was steamy!
 - turtletrot.jpg: Running a beach 5k on Hilton Head Island, a summer favorite.

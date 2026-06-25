@@ -52,11 +52,11 @@
     </nav>
 
     <!-- Hero -->
-    <article id="top" class="hero-section" style="background-image: url('images/projects/training.jpg'); height: 60vh;">
+    <article id="top" class="hero-section" style="background-color: #7190B9; background-image: none; height: 60vh">
         <div class="hero-content">
             <div class="container">
                 <header>
-                    <h1 style="color: #000000;"><b>Dancebot</b></h1>
+                    <h1 style="color: #000000;"><b>DanceBot</b></h1>
                 </header>
             </div>
         </div>
@@ -65,119 +65,43 @@
     <!-- Project Detail -->
     <article class="wrapper style3">
         <div class="container">
-            <div class="project-detail">
+            <div class="project-detail" style="text-align: center;">
                 <p>DanceBot was a project I worked on in an Intro Robotics course with Prof. Sarah Sebo
                     in Spring 2024. My two teammates and I programmed a TurtleBot3 to recognize ASL gestures, utilizing computer vision
                     and TensorFlow to train a model on the Sign Language MNIST dataset. We then used ROS to enable the robot to perform
                     dance moves in response to the gestures. It was such a fun project and I learned so much!</p>
+                <img src="images/projects/training.jpg" alt="DanceBot" style="max-width: 600px; width: 100%; margin-bottom: 0.5em;" />
+                <p><em>Turtlebot dance lessons!</em></p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Tech Stack -->
+    <article class="wrapper style3">
+        <div class="container">
+            <div class="project-detail" style="text-align: center;">
                 <h3>Tech Stack</h3>
                 <ul class="tech-stack">
-                    <li>ROS (Python) for robot control</li>
-                    <li>Keras (Tensorflow) for fine-tuning</li>
-                    <li>Sign Language MNIST for base model</li>
+                    <li>ROS (Python)</li>
+                    <li>Keras (Tensorflow)</li>
+                    <li>ASL MNIST</li>
                 </ul>
                 <a href="https://github.com/madbusse/dancebot" class="button large" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
         </div>
     </article>
 
-    <!-- README -->
-    <div class="wrap">
-        <h1 class="sr-only">README</h1>
-        <div id="status" class="status">Loading README…</div>
-        <article id="readme" class="markdown-body"></article>
-    </div>
-
-    <script>
-    (async function () {
-        const SOURCE = "local";
-        const GH = {
-            USER: "user-or-org",
-            REPO: "repo-name",
-            BRANCH: "main",
-            PATH: "dancebotREADME.md"
-        };
-
-        marked.setOptions({
-            gfm: true,
-            breaks: false,
-            headerIds: true,
-            mangle: false,
-            highlight: (code, lang) => {
-                try {
-                    if (lang && hljs.getLanguage(lang)) {
-                        return hljs.highlight(code, { language: lang }).value;
-                    }
-                } catch (_) {}
-                return hljs.highlightAuto(code).value;
-            }
-        });
-
-        const statusEl = document.getElementById('status');
-        const container = document.getElementById('readme');
-
-        function ghRawUrl({USER, REPO, BRANCH, PATH}) {
-            return `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${PATH}`;
-        }
-        function ghBlobUrl({USER, REPO, BRANCH, PATH}) {
-            return `https://github.com/${USER}/${REPO}/blob/${BRANCH}/${PATH}`;
-        }
-        function ghDirBase({USER, REPO, BRANCH, PATH}) {
-            const parts = PATH.split('/'); parts.pop();
-            const dir = parts.join('/');
-            return `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${dir ? dir + '/' : ''}`;
-        }
-
-        async function loadReadme() {
-            let url;
-            let fixupMode = "none";
-            if (SOURCE === "local") {
-                url = "dancebotREADME.md";
-                fixupMode = "relative-local";
-            } else {
-                url = ghRawUrl(GH);
-                fixupMode = "relative-github";
-            }
-            const res = await fetch(url, { cache: 'no-store' });
-            if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-            return { text: await res.text(), fixupMode };
-        }
-
-        function postProcessLinksAndImages(root, mode) {
-            root.querySelectorAll('a[href]').forEach(a => {
-                a.target = '_blank'; a.rel = 'noopener noreferrer';
-                if (mode === "relative-github") {
-                    const href = a.getAttribute('href');
-                    if (href && !/^([a-z]+:)?\/\//i.test(href) && !href.startsWith('#')) {
-                        const basePath = GH.PATH.split('/').slice(0, -1).join('/');
-                        const joined = (basePath ? basePath + '/' : '') + href;
-                        a.href = ghBlobUrl({...GH, PATH: joined});
-                    }
-                }
-            });
-            root.querySelectorAll('img[src]').forEach(img => {
-                const src = img.getAttribute('src');
-                if (!src || /^([a-z]+:)?\/\//i.test(src) || src.startsWith('data:')) return;
-                if (mode === "relative-github") {
-                    img.src = ghDirBase(GH) + src.replace(/^.\//, '');
-                }
-            });
-        }
-
-        try {
-            const { text, fixupMode } = await loadReadme();
-            const html = marked.parse(text);
-            const clean = DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
-            container.innerHTML = clean;
-            postProcessLinksAndImages(container, fixupMode);
-            statusEl.textContent = "";
-        } catch (err) {
-            console.error(err);
-            statusEl.textContent = `Failed to load README: ${err.message}.`;
-            return;
-        }
-    })();
-    </script>
+    <!-- Music Video -->
+    <article class="wrapper style3">
+        <div class="container">
+            <div class="project-detail" style="text-align: center;">
+                <h2>Music Video</h2>
+                <div style="position: relative; width: 100%; max-width: 600px; margin: 0 auto; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/dN4DkEUt5Js" title="DanceBot Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </article>
 
     <!-- Contact/Footer -->
     <article id="contact" class="wrapper style4">

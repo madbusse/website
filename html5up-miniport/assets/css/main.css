@@ -2030,26 +2030,33 @@ input, select, textarea {
 				margin-bottom: 0.5em;
 			}
 
-		.box.style2 h3 {
-			margin-bottom: 0.25em;
+		.box.style2 {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
 		}
 
-		.box.style2 .image img {
-			width: 300px;
-			height: 200px;
-			object-fit: contain; /* prevent cropping */
-			/* background-color: #f0f0f0; optional: fills space around image */
+		.box.style2 h3 {
+			margin: 0;
+			padding-top: 0.75em;
+			margin-top: auto;
 		}
 
 		.box.style2 .image {
-			position: relative;
-			left: 2em;
-			top: 2em;
-			margin: -4em 0 2em -4em;
-			width: 300px;         /* fixed width */
-			height: 200px;        /* fixed height */
-			object-fit: cover;    /* maintains aspect ratio and fills the box */
+			width: 100%;
+			aspect-ratio: 1 / 1;
 			overflow: hidden;
+		}
+
+		#projects-grid .box.style2 .image {
+			width: 50%;
+			margin: 0 auto;
+		}
+
+		.box.style2 .image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 
 /* Project Detail */
@@ -2062,7 +2069,7 @@ input, select, textarea {
 	.project-detail > p {
 		font-size: 1.05em;
 		line-height: 1.8;
-		text-align: left;
+		text-align: center;
 	}
 
 	.tech-stack {
@@ -2076,7 +2083,8 @@ input, select, textarea {
 	}
 
 	.tech-stack li {
-		background: #e0e0e0;
+		background: #7190B9;
+		color: #fff;
 		padding: 0.5em 1.2em;
 		border-radius: 20px;
 		font-size: 0.95em;
